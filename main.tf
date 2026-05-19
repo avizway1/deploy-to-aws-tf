@@ -17,6 +17,6 @@ resource "aws_instance" "mywebserver" {
   instance_type = "t3.micro"
 
   tags = {
-    Name = "MyWeb-Server"
+    Name = "MyWeb-Server-test"
   }
 }

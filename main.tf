@@ -4,9 +4,9 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "aviz-tfstate-bucket"
-    key = "myprodstate/terraform.tfstate"
-    region = "ap-south-1"
+    bucket       = "aviz-tfstate-bucket"
+    key          = "myprodstate/terraform.tfstate"
+    region       = "ap-south-1"
     use_lockfile = true
   }
 }

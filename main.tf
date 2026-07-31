@@ -4,19 +4,19 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket       = "aviz-tfstate-bucket"
-    key          = "myprodstate/terraform.tfstate"
-    region       = "ap-south-1"
+    bucket = "aviz.tf.state.myproject"
+    key = "cicd/terraform.tfstate"
+    region = "ap-south-1"
     use_lockfile = true
   }
 }
 
-resource "aws_instance" "mywebserver" {
-  count         = 1
-  ami           = "ami-01b40e1bcccae197a"
+resource "aws_instance" "webserver" {
+  count = 1
+  ami  = "ami-00d2dbb426772b03a"
   instance_type = "t3.micro"
 
   tags = {
-    Name = "MyWeb-Server-test"
+    Name = "cicd-tf-demo"
   }
 }
